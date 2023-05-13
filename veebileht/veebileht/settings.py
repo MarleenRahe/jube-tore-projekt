@@ -27,6 +27,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+STATICFILES_DIRS = [
+    "jube-tore-projekt/veebileht/main/static"
+]
+
 
 # Application definition
 
