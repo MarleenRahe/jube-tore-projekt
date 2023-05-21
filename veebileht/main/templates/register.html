@@ -1,22 +1,50 @@
-<head>
-	<title>Register</title>
-</head>
-
 {% extends "base.html" %}
 
 {% block content %}
 
+{% load static %}
+<head>
+	<title>Register</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'style/style1.css' %}">
+</head>
+
 {% load crispy_forms_tags %}
 
 <!--Register-->
-<div class="container py-5">
-	<h1>Register</h1>
-	<form method="POST">
-		{% csrf_token %}
-		{{ register_form|crispy }}
-		<button class="btn btn-primary" type="submit">Register</button>
-	</form>
-	<p class="text-center">If you already have an account, <a href="login">login</a> instead.</p>
+<div class="wrapper">
+  <div class="form">
+    <div class="title">
+      Registreeri end kasutajaks
+    </div>
+    <form method="POST" action="/" onsubmit="register_request();">
+        {% csrf_token %}
+      <div class="input_wrap">
+        <label for="input_text">Kasutajanimi</label>
+        <div class="input_field">
+          <input type="text" name="username*" class="input" id="input_text">
+        </div>
+      </div>
+      <div class="input_wrap">
+        <label for="input_password">Parool</label>
+        <div class="input_field">
+          <input type="password" name="password" class="input" id="input_password">
+        </div>
+      </div>
+		<div class="input_wrap">
+        <label for="input_password">Parooli kinnitus</label>
+        <div class="input_field">
+          <input type="password" name="password confirmation" class="input" id="input_password">
+        </div>
+      </div>
+      <div class="input_wrap">
+        <span class="error_msg">Incorrect username or password. Please try again</span>
+        <input type="submit" id="login_btn" class="btn enabled" value="Registreeru" >
+      </div>
+    </form>
+  <div style = "position:relative; top:25px;">
+    <p class="text-center">Oled juba kasutaja? <a href="login">Logi sisse</a>.</p>
+  </div>
+  </div>
 </div>
 
 {% endblock %}
