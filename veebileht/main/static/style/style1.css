@@ -10,7 +10,7 @@
 }
 
 body{
-  background: linear-gradient(to right, #f4b661, #f16160);
+  background: linear-gradient(to right, #ff9f80, #ff99d3);
 }
 
 .wrapper{
@@ -83,7 +83,7 @@ body{
 }
 
 .form .input_wrap .btn.enabled{
-  background: #727272;
+  background: #ff99d3;
   cursor: pointer;
 }
 
