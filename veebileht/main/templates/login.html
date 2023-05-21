@@ -1,22 +1,44 @@
-<head>
-	<title>Login</title>
-</head>
-
 {% extends "base.html" %}
 
 {% block content %}
 
+{% load static %}
+<head>
+	<title>Login</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'style/style1.css' %}">
+</head>
+
 {% load crispy_forms_tags %}
 
 <!--Login-->
-<div class="container py-5">
-    <h1>Login</h1>
-    <form method="POST">
+<div class="wrapper">
+  <div class="form">
+    <div class="title">
+      Logi sisse
+    </div>
+    <form method="POST" action="/login" onsubmit="login_request();">
         {% csrf_token %}
-        {{ login_form|crispy }}
-        <button class="btn btn-primary" type="submit">Login</button>
+      <div class="input_wrap">
+        <label for="input_text">Kasutaja</label>
+        <div class="input_field">
+          <input type="text" name="username" class="input" id="input_text">
+        </div>
+      </div>
+      <div class="input_wrap">
+        <label for="input_password">Parool</label>
+        <div class="input_field">
+          <input type="password" name="password" class="input" id="input_password">
+        </div>
+      </div>
+      <div class="input_wrap">
+        <span class="error_msg">Incorrect username or password. Please try again</span>
+        <input type="submit" id="login_btn" class="btn enabled" value="Logi sisse" >
+      </div>
     </form>
-    <p class="text-center">Don't have an account? <a href="register">Create an account</a>.</p>
+  <div style = "position:relative; top:25px;">
+    <p class="text-center">Pole kasutajat? <a href="register">Registreeru</a>.</p>
+  </div>
+  </div>
 </div>
 
 {% endblock %}
