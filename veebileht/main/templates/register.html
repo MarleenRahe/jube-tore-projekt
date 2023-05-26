@@ -16,30 +16,33 @@
     <div class="title">
       Registreeri end kasutajaks
     </div>
-    <form method="POST" action="/" onsubmit="register_request();">
+    <form method="POST" action="/register" onsubmit="register_request();">
         {% csrf_token %}
       <div class="input_wrap">
         <label for="input_text">Kasutajanimi</label>
         <div class="input_field">
-          <input type="text" name="username*" class="input" id="input_text">
+          <input type="text" name="username" class="input" id="input_text">
         </div>
       </div>
       <div class="input_wrap">
-        <label for="input_password">Parool</label>
+        <label for="input_password1">Parool</label>
         <div class="input_field">
-          <input type="password" name="password" class="input" id="input_password">
+          <input type="password" name="password1" class="input" id="input_password1">
         </div>
       </div>
 		<div class="input_wrap">
-        <label for="input_password">Parooli kinnitus</label>
+        <label for="input_password2">Parooli kinnitus</label>
         <div class="input_field">
-          <input type="password" name="password confirmation" class="input" id="input_password">
+          <input type="password" name="password2" class="input" id="input_password2">
         </div>
       </div>
       <div class="input_wrap">
         <span class="error_msg">Incorrect username or password. Please try again</span>
-        <input type="submit" id="login_btn" class="btn enabled" value="Registreeru" >
+        <input type="submit" id="login_btn" class="btn enabled" value="Loo konto" >
       </div>
+      {% if register_form.errors %}
+        <div class="text-center">Midagi on valesti ups</div>
+      {% endif %}
     </form>
   <div style = "position:relative; top:25px;">
     <p class="text-center">Oled juba kasutaja? <a href="login">Logi sisse</a>.</p>
