@@ -31,12 +31,14 @@
         </div>
       </div>
       <div class="input_wrap">
-        <span class="error_msg">Incorrect username or password. Please try again</span>
         <input type="submit" id="login_btn" class="btn enabled" value="Logi sisse" >
       </div>
+      {% if login_form.errors %}
+        <div class="text-center">Vale kasutajanimi või parool</div>
+      {% endif %}
     </form>
   <div style = "position:relative; top:25px;">
-    <p class="text-center">Pole kasutajat? <a href="register">Registreeru</a>.</p>
+    <p class="text-center">Pole kasutajat? <a href="register">Loo konto</a>.</p>
   </div>
   </div>
 </div>

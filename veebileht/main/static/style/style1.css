@@ -93,3 +93,7 @@ body{
   color: #f74040;
   display: none;
 }
+
+a:link {color: #ff0000; text-decoration: none;}
+a:visited {color: #0000ff; text-decoration: none;}
+a:hover {text-decoration: underline;}
