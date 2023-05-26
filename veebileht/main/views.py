@@ -38,6 +38,12 @@ def logout_request(request):
 def home(response):
     return render(response, "home.html", {})
 
+@login_required(login_url="/preview")
+def todo(response):
+    return render(response, "todo.html", {})
+
 def preview(response):
     return render(response, "preview.html", {})
+
+
 
