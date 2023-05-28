@@ -1,4 +1,25 @@
-{% extends "base.html" %}
+{% include 'base1.html' %}
+{% include 'base2.html' %}
+
 {% block content %}
-<h1>Preview</h1>
+
+{% load static %}
+<html>
+<head>
+    <title>Preview</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'style/style2.css' %}">
+    <style type="text/css">
+        body{
+            background: url(https://images.unsplash.com/photo-1611601147557-cdc89476ec4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80) no-repeat;
+            background-size: cover;
+            height: 100vh;
+            background-position: left;
+        }
+    </style>
+
+</head>
+<body>
+</body>
+</html>
+
 {% endblock %}
