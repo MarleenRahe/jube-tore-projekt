@@ -9,4 +9,6 @@ urlpatterns = [
         path('register', views.register_request, name='register'),
         path('login', views.login_request, name='login'),
         path('logout', views.logout_request, name='logout'),
+        path('todo', views.todo, name='todo'),
+        path('del/<str:item_id>', views.remove, name="del"),
 ]

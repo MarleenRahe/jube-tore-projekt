@@ -5,6 +5,8 @@ from .forms import NewUserForm
 from django.contrib.auth import login, authenticate, logout
 from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm
+from .forms import TodoForm
+from .models import Todo
 
 # Create your views here.
 def register_request(request):
@@ -38,6 +40,34 @@ def logout_request(request):
 def home(response):
     return render(response, "home.html", {})
 
+@login_required(login_url="/preview")
+def todo(response):
+    return render(response, "todo.html", {})
+
 def preview(response):
     return render(response, "preview.html", {})
+
+
+def index(request):
+    item_list = Todo.objects.order_by("-date")
+    if request.method == "POST":
+        form = TodoForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('todo')
+    form = TodoForm()
+
+    page = {
+        "forms": form,
+        "list": item_list,
+        "title": "TODO LIST",
+    }
+    return render(request, 'todo/index.html', page)
+
+def remove(request, item_id):
+    item = Todo.objects.get(id=item_id)
+    item.delete()
+    messages.info(request, "item removed !!!")
+    return redirect('todo')
+
 

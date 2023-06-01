@@ -1,0 +1,26 @@
+
+{% load static %}
+
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'style/style2.css' %}">
+</head>
+<body>
+
+<div class="header">
+    <ul>
+        <li><a href="."><img src="{% static 'logo1.png' %}" alt="..." height="60"></a></li>
+        {% if user.is_authenticated %}
+        <li style = "position:relative; top:-25px; left: 1200px"><a href="logout">Logi välja</a></li>
+        {% else %}
+        <li style = "position:relative; top:-25px; left: 1200px"><a href="login">Login</a></li>
+        {% endif %}
+    </ul>
+</div>
+
+    {% block content %}
+
+    {% endblock %}
+
+</body>
+</html>

@@ -1,12 +1,23 @@
-{% extends "base.html" %}
+{% extends "base1.html" %}
 
 {% block content %}
 
 {% load static %}
 <head>
 	<title>Register</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'style/style2.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'style/style1.css' %}">
 </head>
+
+<body>
+
+<div class="header">
+    <ul>
+        <li><a href="."><img src="{% static 'logo1.png' %}" alt="..." height="60"></a></li>
+    </ul>
+</div>
+
+</body>
 
 {% load crispy_forms_tags %}
 
