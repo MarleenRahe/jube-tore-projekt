@@ -40,21 +40,18 @@ def logout_request(request):
 def home(response):
     return render(response, "home.html", {})
 
-@login_required(login_url="/preview")
-def todo(response):
-    return render(response, "todo.html", {})
-
 def preview(response):
     return render(response, "preview.html", {})
 
 
-def index(request):
+@login_required(login_url="/preview")
+def todo(request):
     item_list = Todo.objects.order_by("-date")
     if request.method == "POST":
         form = TodoForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('todo')
+            return redirect('/todo')
     form = TodoForm()
 
     page = {
@@ -62,12 +59,14 @@ def index(request):
         "list": item_list,
         "title": "TODO LIST",
     }
-    return render(request, 'todo/index.html', page)
+    return render(request, 'todo.html', page)
 
 def remove(request, item_id):
     item = Todo.objects.get(id=item_id)
     item.delete()
     messages.info(request, "item removed !!!")
-    return redirect('todo')
+    return redirect('/todo')
 
-
+@login_required(login_url="/preview")
+def pomodoro(response):
+    return render(response, "pomodoro.html", {})
