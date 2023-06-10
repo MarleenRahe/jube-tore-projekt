@@ -9,9 +9,9 @@
  *
  */
 :root {
-  --pomodoro: hsl(223, 25%, 40%);
-  --shortBreak: hsl(48, 23%, 40%);
-  --longBreak: hsl(105, 16%, 40%);
+  --pomodoro: hsl(335, 100%, 77%, 0.5);
+  --shortBreak: hsl(335, 100%, 62%, 0.5);
+  --longBreak: hsl(335, 100%, 62%, 0.2);
 }
 
 html {
