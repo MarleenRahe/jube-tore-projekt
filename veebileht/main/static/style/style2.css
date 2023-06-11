@@ -30,6 +30,3 @@ background-position: left;
     padding: 25px;
     transition: all ease 0.5s;
 }
-.header ul li a:hover{
-    background-color: #211b4385;
-}

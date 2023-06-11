@@ -1,16 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,500,600');
 
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Jost', sans-serif;
+  font-family: "Raleway", sans-serif;
   outline: none;
   color: #5c4b51;
 }
 
 body{
-  background: linear-gradient(to right, #ff9f80, #ff99d3);
+  background: linear-gradient(to right, #f5c2c6, #f1baab);
 }
 
 .wrapper{
@@ -78,22 +78,9 @@ body{
   color: #fff;
 }
 
-.form .input_wrap .btn.disabled{
-  background: #727272;
-}
-
 .form .input_wrap .btn.enabled{
-  background: #ff99d3;
+  background: #f5c2c6;
   cursor: pointer;
 }
 
-.form .input_wrap .error_msg{
-  font-size: 15px;
-  margin-bottom: 5px;
-  color: #f74040;
-  display: none;
-}
-
-a:link {color: #ff0000; text-decoration: none;}
-a:visited {color: #0000ff; text-decoration: none;}
-a:hover {text-decoration: underline;}
+a:link {color: #c56e8d; text-decoration: none;}

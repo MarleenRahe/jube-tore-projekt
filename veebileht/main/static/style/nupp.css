@@ -1,63 +1,83 @@
-.button1 {
-  background-color: transparent;
-  border: 1px solid #266DB6;
-  box-sizing: border-box;
-  color: #00132C;
-  font-family: "Avenir Next LT W01 Bold",sans-serif;
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 24px;
-  padding: 16px 23px;
-  position: relative;
-  text-decoration: none;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-}
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,500,600');
 
-.button1:hover,
-.button-51:active {
-  outline: 0;
+.button1 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34rem;
+  height: 13rem;
+  border: 0;
+  position: relative;
+  overflow: hidden;
+  border-radius: 5rem;
+  transition: all 0.01s;
+  text-transform: uppercase;
+  color: #fff;
+  font-family: "Raleway", sans-serif;
+  font-weight: bold;
+  font-size: 40px;
+  z-index: 0;
+  box-shadow: 0 0px 7px -5px rgba(0, 0, 0, 0.5);
 }
 
 .button1:hover {
-  background-color: transparent;
-  cursor: pointer;
+  background: rgb(193, 228, 248);
+  color: rgb(33, 0, 85);
 }
 
-.button1:before {
-  background-color: #D5EDF6;
-  content: "";
-  height: calc(100% + 3px);
+.button1:active {
+  transform: scale(0.97);
+}
+
+.hoverEffect {
   position: absolute;
-  right: -7px;
-  top: -9px;
-  transition: background-color 300ms ease-in;
-  width: 100%;
-  z-index: -1;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
 }
 
-.button1:hover:before {
-  background-color: #6DCFF6;
+.hoverEffect div {
+  background: rgb(222,0,75);
+  background: linear-gradient(45deg, rgb(228,191,200) 0%, rgba(191,70,255,1) 49%, rgba(0,212,255,1) 100%);
+  border-radius: 40rem;
+  width: 100rem;
+  height: 100rem;
+  transition: 0.4s;
+  filter: blur(20px);
+  animation: effect infinite 7s linear;
+  opacity: 0.5;
 }
 
-@media (min-width: 768px) {
-  .button1 {
-    padding: 16px 32px;
+.button1:hover .hoverEffect div {
+  width: 40rem;
+  height: 40rem;
+}
+
+@keyframes effect {
+
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
   }
 }
-
 /**/
 
 .button2 {
-  background-color: #fff;
   position: relative;
+  background-color: #fcd8db;
   list-style: none;
   width: 60px;
   height: 60px;
   border-radius: 60px;
   cursor: pointer;
-  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -95,7 +115,7 @@
   width: 100%;
   height: 100%;
   border-radius: 60px;
-  background: linear-gradient(45deg, var(--i), var(--j));
+  background: #c56e8d;
   filter: blur(15px);
   transition: 0.5s;
   z-index: -1;
@@ -135,7 +155,7 @@
   font-weight: 600;
 }
 
-button:hover .title {
+.button2:hover .title {
   transform: scale(1);
   transition-delay: 0.25s;
 }
