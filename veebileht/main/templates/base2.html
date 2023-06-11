@@ -1,4 +1,3 @@
-
 {% load static %}
 
 <html>
@@ -11,9 +10,9 @@
     <ul>
         <li><a href="."><img src="{% static 'logo1.png' %}" alt="..." height="60"></a></li>
         {% if user.is_authenticated %}
-        <li style = "position:relative; top:-25px; left: 1200px"><a href="logout">Logi välja</a></li>
+        <li style = "position:absolute; top:8px; right: 20px"><a href="logout">Logi välja</a></li>
         {% else %}
-        <li style = "position:relative; top:-25px; left: 1200px"><a href="login">Login</a></li>
+        <li style = "position:absolute; top:8px; right:20px"><a href="login">Logi sisse</a></li>
         {% endif %}
     </ul>
 </div>

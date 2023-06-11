@@ -1,51 +1,161 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,500,600');
 
-
-/* CSS */
-.button-51 {
-  background-color: transparent;
-  border: 1px solid #266DB6;
-  box-sizing: border-box;
-  color: #00132C;
-  font-family: "Avenir Next LT W01 Bold",sans-serif;
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 24px;
-  padding: 16px 23px;
+.button1 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34rem;
+  height: 13rem;
+  border: 0;
   position: relative;
-  text-decoration: none;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
+  overflow: hidden;
+  border-radius: 5rem;
+  transition: all 0.01s;
+  text-transform: uppercase;
+  color: #fff;
+  font-family: "Raleway", sans-serif;
+  font-weight: bold;
+  font-size: 40px;
+  z-index: 0;
+  box-shadow: 0 0px 7px -5px rgba(0, 0, 0, 0.5);
 }
 
-.button-51:hover,
-.button-51:active {
-  outline: 0;
+.button1:hover {
+  background: rgb(193, 228, 248);
+  color: rgb(33, 0, 85);
 }
 
-.button-51:hover {
-  background-color: transparent;
-  cursor: pointer;
+.button1:active {
+  transform: scale(0.97);
 }
 
-.button-51:before {
-  background-color: #D5EDF6;
-  content: "";
-  height: calc(100% + 3px);
+.hoverEffect {
   position: absolute;
-  right: -7px;
-  top: -9px;
-  transition: background-color 300ms ease-in;
-  width: 100%;
-  z-index: -1;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
 }
 
-.button-51:hover:before {
-  background-color: #6DCFF6;
+.hoverEffect div {
+  background: rgb(222,0,75);
+  background: linear-gradient(45deg, rgb(228,191,200) 0%, rgba(191,70,255,1) 49%, rgba(0,212,255,1) 100%);
+  border-radius: 40rem;
+  width: 100rem;
+  height: 100rem;
+  transition: 0.4s;
+  filter: blur(20px);
+  animation: effect infinite 7s linear;
+  opacity: 0.5;
 }
 
-@media (min-width: 768px) {
-  .button-51 {
-    padding: 16px 32px;
+.button1:hover .hoverEffect div {
+  width: 40rem;
+  height: 40rem;
+}
+
+@keyframes effect {
+
+  0% {
+    transform: rotate(0deg);
   }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/**/
+
+.button2 {
+  position: relative;
+  background-color: #fcd8db;
+  list-style: none;
+  width: 60px;
+  height: 60px;
+  border-radius: 60px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s;
+  border: none;
+}
+
+.button2:active {
+  scale: 1.2;
+}
+
+.button2:hover {
+  width: 180px;
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0);
+}
+
+.button2::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50px;
+  background: linear-gradient(45deg, var(--i), var(--j));
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.button2:hover::before {
+  opacity: 1;
+}
+
+.button2::after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  width: 100%;
+  height: 100%;
+  border-radius: 60px;
+  background: #c56e8d;
+  filter: blur(15px);
+  transition: 0.5s;
+  z-index: -1;
+  opacity: 0;
+}
+
+.button2:hover::after {
+  opacity: 0.5;
+}
+
+.button2 svg {
+  color: #777;
+  width: auto;
+  height: 30px;
+  transition: 0.5s;
+  transition-delay: 0.25s;
+}
+
+.button2:hover svg {
+  transform: scale(0);
+  color: #fff;
+  transition-delay: 0s;
+}
+
+.button2 span {
+  position: absolute;
+}
+
+.button2 .title {
+  color: #fff;
+  font-size: 1.3em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transform: scale(0);
+  transition: 0.5s;
+  transition-delay: 0s;
+  font-weight: 600;
+}
+
+.button2:hover .title {
+  transform: scale(1);
+  transition-delay: 0.25s;
 }

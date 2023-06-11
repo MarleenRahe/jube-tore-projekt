@@ -16,8 +16,6 @@
   </head>
   <body>
     <main class="app">
-      <progress id="js-progress" value="0"></progress>
-      <div class="progress-bar"></div>
       <div class="timer">
         <div class="button-group mode-buttons" id="js-mode-buttons">
           <button
@@ -32,14 +30,14 @@
             class="button mode-button"
             id="js-short-break"
           >
-            Short break
+            Lühike paus
           </button>
           <button
             data-mode="longBreak"
             class="button mode-button"
             id="js-long-break"
           >
-            Long break
+            Pikk paus
           </button>
         </div>
         <div class="clock" id="js-clock">
@@ -48,7 +46,7 @@
           <span id="js-seconds">00</span>
         </div>
         <button class="main-button" data-action="start" id="js-btn">
-          Start
+          Alusta
         </button>
       </div>
     </main>
@@ -101,7 +99,7 @@ function startTimer() {
   const endTime = Date.parse(new Date()) + total * 1000;
 
   mainButton.dataset.action = 'stop';
-  mainButton.textContent = 'stop';
+  mainButton.textContent = 'lõpeta';
   mainButton.classList.add('active');
 
   interval = setInterval(function() {
@@ -119,7 +117,7 @@ function stopTimer() {
   clearInterval(interval);
 
   mainButton.dataset.action = 'start';
-  mainButton.textContent = 'start';
+  mainButton.textContent = 'alusta';
   mainButton.classList.remove('active');
 }
 
