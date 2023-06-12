@@ -7,7 +7,7 @@
   width: 34vw;
   height: 13vw;
   border: 0;
-  position: relative;
+  position: absolute;
   overflow: hidden;
   border-radius: 5vw;
   transition: all 0.01s;
