@@ -1,8 +1,8 @@
 Vaja läheb
 
-crispy_forms
+django-crispy-forms
 
-crispy_bootstrap4
+crispy-bootstrap4
 
 django
 
