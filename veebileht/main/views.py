@@ -46,9 +46,11 @@ def preview(response):
 
 @login_required(login_url="/preview")
 def todo(request):
-    item_list = Todo.objects.order_by("-date")
+    item_list = Todo.objects.order_by("-date").filter(user=request.user)
     if request.method == "POST":
-        form = TodoForm(request.POST)
+        data = request.POST.dict()
+        data["user"] = request.user
+        form = TodoForm(data)
         if form.is_valid():
             form.save()
             return redirect('/todo')

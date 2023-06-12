@@ -50,11 +50,6 @@
         </button>
       </div>
     </main>
-    <div class="hidden">
-      <audio src="backtowork.mp3" data-sound="pomodoro"></audio>
-      <audio src="break.mp3" data-sound="shortBreak"></audio>
-      <audio src="break.mp3" data-sound="longBreak"></audio>
-    </div>
     <script src="main.js"></script>
   <script>
 const timer = {
@@ -99,7 +94,7 @@ function startTimer() {
   const endTime = Date.parse(new Date()) + total * 1000;
 
   mainButton.dataset.action = 'stop';
-  mainButton.textContent = 'lõpeta';
+  mainButton.textContent = 'paus';
   mainButton.classList.add('active');
 
   interval = setInterval(function() {
