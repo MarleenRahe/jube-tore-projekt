@@ -4,25 +4,27 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 34rem;
-  height: 13rem;
+  width: 34vw;
+  height: 13vw;
   border: 0;
   position: relative;
   overflow: hidden;
-  border-radius: 5rem;
+  border-radius: 5vw;
   transition: all 0.01s;
   text-transform: uppercase;
-  color: #fff;
+  color: #933636;
   font-family: "Raleway", sans-serif;
   font-weight: bold;
-  font-size: 40px;
+  font-size: 3vw;
   z-index: 0;
   box-shadow: 0 0px 7px -5px rgba(0, 0, 0, 0.5);
 }
 
 .button1:hover {
-  background: rgb(193, 228, 248);
-  color: rgb(33, 0, 85);
+  background: rgb(250, 185, 220);
+  color: #933636;
+  opacity: 0.8;
+
 }
 
 .button1:active {
@@ -43,7 +45,7 @@
 
 .hoverEffect div {
   background: rgb(222,0,75);
-  background: linear-gradient(45deg, rgb(228,191,200) 0%, rgba(191,70,255,1) 49%, rgba(0,212,255,1) 100%);
+  background: linear-gradient(45deg, rgb(233, 73, 156) 0%, rgb(255, 137, 212) 49%, rgb(251, 28, 114) 100%);
   border-radius: 40rem;
   width: 100rem;
   height: 100rem;
@@ -54,8 +56,8 @@
 }
 
 .button1:hover .hoverEffect div {
-  width: 40rem;
-  height: 40rem;
+  width: 40vw;
+  height: 40vw;
 }
 
 @keyframes effect {

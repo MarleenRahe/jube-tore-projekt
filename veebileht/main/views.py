@@ -70,3 +70,4 @@ def remove(request, item_id):
 @login_required(login_url="/preview")
 def pomodoro(response):
     return render(response, "pomodoro.html", {})
+
