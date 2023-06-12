@@ -18,13 +18,13 @@ class NewUserForm(UserCreationForm):
 class TodoForm(forms.ModelForm):
     class Meta:
         model = Todo
-        fields = ("title", "details", "date")
+        fields = ("title", "details", "date", "user")
         widgets = {
             'details': forms.Textarea(attrs={'rows': 8, 'cols': 26}),
+            'user': forms.HiddenInput(),
         }
         labels = {
             "title": 'Nimi',
             "details": 'Märkmed',
             "date": 'Kuupäev'
-
         }
