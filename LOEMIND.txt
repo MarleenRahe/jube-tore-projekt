@@ -1,8 +1,11 @@
 Vaja läheb
 
 django-crispy-forms
+#pip install django-crispy-forms
+
 
 crispy-bootstrap4
+#pip install crispy-bootstrap4
 
 django
 
